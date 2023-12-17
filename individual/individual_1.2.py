@@ -7,19 +7,9 @@
 
 if __name__ == '__main__':
     int_list = list(map(int, input("Введите список целых чисел: ").split()))
-    multiple_five = []
-    multiple_seven = []
-    remaining_list = []
-
-    # Создадим из певого списка трое новых
-    for i in int_list:
-        if i % 5 == 0:
-            multiple_five += [i]
-        if i % 7 == 0:
-            multiple_seven += [i]
-        if i % 5 != 0:
-            if i % 7 != 0:
-                remaining_list += [i]
+    multiple_five = [i for i in int_list if i % 5 == 0]
+    multiple_seven = [i for i in int_list if i % 7 == 0]
+    remaining_list = [i for i in int_list if i % 5 != 0 if i % 7 != 0]
 
     print("Числа, кратные 5:", multiple_five)
     print("Числа, кратные 7:", multiple_seven)
